@@ -7,6 +7,7 @@ function Navigation() {
                 <a href="">T-shirts</a>
                 <a href="">Shorts</a>
                 <a href="">Pants</a>
+                <a href="">Hats</a>
             </nav>
             <div className="controls">
                 <div className="search">
