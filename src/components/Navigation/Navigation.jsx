@@ -1,7 +1,8 @@
+import s from "./Navigation.module.css";
 function Navigation() { 
     return (
-        <header className="navbar">
-            <div className="logo">Mebius</div>
+        <header className={s.navbar}>
+            <div className={s.logo}>Mebius</div>
             <nav>
                 <a href="">Shoes</a>
                 <a href="">T-shirts</a>
@@ -9,7 +10,7 @@ function Navigation() {
                 <a href="">Pants</a>
                 <a href="">Hats</a>
             </nav>
-            <div className="controls">
+            <div className={s.controls}>
                 <div className="search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
                 </div>
