@@ -1,4 +1,4 @@
-import s from "./Navigation.module.css";
+
 function Navigation() { 
     return (
         <header className={s.navbar}>
