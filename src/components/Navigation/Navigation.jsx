@@ -9,14 +9,17 @@ export default function Navigation() {
   return (
     <header className="bg-white border-b border-gray-200 px-4 lg:px-16">
       <div>
-        <div className="flex items-center justify-between h-16">
-          {/* Logo - added ml-8 to move right */}
-          <a href="/" className="font-bold text-2xl ml-8">
+        <div className="flex items-center h-16 gap-8">
+          {/* Spacer */}
+          <div className="flex-none w-8"></div>
+          
+          {/* Logo */}
+          <a href="/" className="font-bold text-2xl flex-none">
             Mebius
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 gap-6">
+          <nav className="hidden md:flex space-x-8 gap-6 flex-1 justify-center">
             {[
               {
                 path: "/shop/shoes",
