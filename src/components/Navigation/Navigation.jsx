@@ -7,7 +7,7 @@ export default function Navigation() {
   const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 px-4 lg:px-16">
+    <header className="bg-white border-b border-gray-250 px-4 lg:px-16">
       <div>
         <div className="flex items-center h-16 gap-8">
           {/* Spacer */}
