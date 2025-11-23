@@ -46,7 +46,7 @@ export default function Navigation() {
                 <a
                   key={item.path}
                   href={item.path}
-                  className="font-medium hover:text-gray-600"
+                  className="font-medium hover:text-gray-500"
                 >
                   {item.label}
                 </a>
@@ -110,7 +110,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="block md:hidden px-4">
+          <div className="block md:hidden px-4 ">
             <div className="flex items-center gap-4">
               <a href="/sign-in">Sign In</a>
               <a href="/sign-up">Sign Up</a>
