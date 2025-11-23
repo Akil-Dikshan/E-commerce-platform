@@ -11,7 +11,7 @@ export default function Navigation() {
       <div>
         <div className="flex items-center h-16 gap-8">
           {/* Spacer */}
-          <div className="flex-none w-8"></div>
+          <div className="flex-none w-9"></div>
           
           {/* Logo */}
           <a href="/" className="font-bold text-2xl flex-none">
