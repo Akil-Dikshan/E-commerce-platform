@@ -97,7 +97,6 @@ export default function Navigation() {
               { path: "/shop/tshirts", label: "T-Shirt" },
               { path: "/shop/shorts", label: "Shorts" },
               { path: "/shop/pants", label: "Pants" },
-              { path: "/shop/socks", label: "Socks" },
             ].map((item) => (
               <a
                 key={item.path}
