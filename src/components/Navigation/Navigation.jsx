@@ -11,7 +11,7 @@ export default function Navigation() {
   const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 px-4 lg:px-16">
+    <header className="bg-white border-b border-gray-200 px-6 lg:px-20">
       <div>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -20,7 +20,7 @@ export default function Navigation() {
           </a>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-20 px-8">
             {[
               {
                 path: "/shop/shoes",
@@ -47,7 +47,7 @@ export default function Navigation() {
                 <a
                   key={item.path}
                   href={item.path}
-                  className="font-medium hover:text-gray-600"
+                  className="font-medium hover:text-gray-600 whitespace-nowrap"
                 >
                   {item.label}
                 </a>
