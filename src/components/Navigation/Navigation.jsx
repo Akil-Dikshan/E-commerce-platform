@@ -1,131 +1,61 @@
-import { useState } from "react";
+import { Search, ShoppingCart } from 'lucide-react';
 
-import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
-
-
-export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
-  // Function href close mobile menu
-  const closeMobileMenu = () => setIsMenuOpen(false);
-
+export default function Navbar() {
   return (
-    <header className="bg-white border-b border-gray-200 px-6 lg:px-20">
-      <div>
+    <nav className="bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="font-bold text-2xl">
-            Mebius
-          </a>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-20 px-8">
-            {[
-              {
-                path: "/shop/shoes",
-                label: "Shoes",
-              },
-              {
-                path: "/shop/tshirts",
-                label: "T-Shirt",
-              },
-              {
-                path: "/shop/shorts",
-                label: "Shorts",
-              },
-              {
-                path: "/shop/pants",
-                label: "Pants",
-              },
-              {
-                path: "/shop/socks",
-                label: "Socks",
-              },
-            ].map((item) => {
-              return (
-                <a
-                  key={item.path}
-                  href={item.path}
-                  className="font-medium hover:text-gray-600 whitespace-nowrap"
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
+          <div className="flex-shrink-0">
+            <h1 className="text-2xl font-bold text-gray-900">Mebius</h1>
+          </div>
 
-          {/* Icons */}
-          <div className="flex items-center space-x-4">
-            <button aria-label="Search" className="p-1">
-              <Search size={20} />
-            </button>
-            <a
-              href="/shop/cart"
-              aria-label="Shopping Bag"
-              className="p-1 relative"
-            >
-              <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                {0}
-              </span>
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Shoes
             </a>
-            {/* <SignedIn>
-              <UserButton />
-            </SignedIn> */}
-            <div className="hidden md:block">
-              {/* <SignedOut> */}
-              <div className="flex items-center gap-4">
-                <a href="/sign-in">Sign In</a>
-                <a href="/sign-up">Sign Up</a>
-              </div>
-              {/* </SignedOut> */}
-            </div>
+            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              T-Shirt
+            </a>
+            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Shorts
+            </a>
+            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Pants
+            </a>
+            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Socks
+            </a>
+          </div>
 
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-1"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {/* Right Side Icons */}
+          <div className="flex items-center space-x-6">
+            {/* Search Icon */}
+            <button className="text-gray-700 hover:text-gray-900 transition-colors">
+              <Search className="w-5 h-5" />
             </button>
+
+            {/* Cart Icon with Badge */}
+            <button className="relative text-gray-700 hover:text-gray-900 transition-colors">
+              <ShoppingCart className="w-5 h-5" />
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                0
+              </span>
+            </button>
+
+            {/* Sign In / Sign Up */}
+            <div className="flex items-center space-x-4">
+              <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                Sign In
+              </a>
+              <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                Sign Up
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
-            {[
-              { path: "/shop/shoes", label: "Shoes" },
-              { path: "/shop/tshirts", label: "T-Shirt" },
-              { path: "/shop/shorts", label: "Shorts" },
-              { path: "/shop/pants", label: "Pants" },
-              { path: "/shop/socks", label: "Socks" },
-            ].map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className="block px-3 py-2 text-base font-medium hover:bg-gray-100 rounded-md"
-                onClick={closeMobileMenu}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="block md:hidden px-4">
-            {/* <SignedOut> */}
-            <div className="flex items-center gap-4">
-              <a href="/sign-in">Sign In</a>
-              <a href="/sign-up">Sign Up</a>
-            </div>
-            {/* </SignedOut> */}
-          </div>
-        </div>
-      )}
-    </header>
+    </nav>
   );
 }
