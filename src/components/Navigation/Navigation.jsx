@@ -1,25 +1,26 @@
 import { useState } from "react";
+
 import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
+
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+  // Function href close mobile menu
   const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-white border-b border-gray-250 px-4 lg:px-16">
+    <header className="bg-white border-b border-gray-200 px-4 lg:px-16">
       <div>
-        <div className="flex items-center h-16 gap-8">
-          {/* Spacer */}
-          <div className="flex-none w-9"></div>
-          
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="font-bold text-2xl flex-none">
+          <a href="/" className="font-bold text-2xl">
             Mebius
           </a>
-
+          
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 gap-6 flex-1 justify-center">
+          <nav className="hidden md:flex space-x-8">
             {[
               {
                 path: "/shop/shoes",
@@ -46,7 +47,7 @@ export default function Navigation() {
                 <a
                   key={item.path}
                   href={item.path}
-                  className="font-medium hover:text-gray-500"
+                  className="font-medium hover:text-gray-600"
                 >
                   {item.label}
                 </a>
@@ -54,8 +55,8 @@ export default function Navigation() {
             })}
           </nav>
 
-          {/* Icons - added mr-8 to move left */}
-          <div className="flex items-center space-x-4 gap-4 mr-8">
+          {/* Icons */}
+          <div className="flex items-center space-x-4">
             <button aria-label="Search" className="p-1">
               <Search size={20} />
             </button>
@@ -69,11 +70,16 @@ export default function Navigation() {
                 {0}
               </span>
             </a>
+            {/* <SignedIn>
+              <UserButton />
+            </SignedIn> */}
             <div className="hidden md:block">
-              <div className="flex items-center gap-4 ">
+              {/* <SignedOut> */}
+              <div className="flex items-center gap-4">
                 <a href="/sign-in">Sign In</a>
                 <a href="/sign-up">Sign Up</a>
               </div>
+              {/* </SignedOut> */}
             </div>
 
             {/* Mobile menu button */}
@@ -97,6 +103,7 @@ export default function Navigation() {
               { path: "/shop/tshirts", label: "T-Shirt" },
               { path: "/shop/shorts", label: "Shorts" },
               { path: "/shop/pants", label: "Pants" },
+              { path: "/shop/socks", label: "Socks" },
             ].map((item) => (
               <a
                 key={item.path}
@@ -109,11 +116,13 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="block md:hidden px-4 ">
+          <div className="block md:hidden px-4">
+            {/* <SignedOut> */}
             <div className="flex items-center gap-4">
               <a href="/sign-in">Sign In</a>
               <a href="/sign-up">Sign Up</a>
             </div>
+            {/* </SignedOut> */}
           </div>
         </div>
       )}
