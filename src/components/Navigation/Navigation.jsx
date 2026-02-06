@@ -1,4 +1,5 @@
 import { Search, ShoppingCart, Menu, X, User } from 'lucide-react';
+import path from 'path';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -19,13 +20,34 @@ export default function Navbar() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            {['Shoes', 'T-Shirt', 'Shorts', 'Pants', 'Socks'].map((item) => (
+            {[
+              {
+                path: "/shop/shoes",
+                label: "shoes",
+              },
+              {
+                path: "/shop/tshirts",
+                label:"T-Shirts",
+              },
+              {
+                path: "/shop/shorts",
+                label:"Shorts",
+              },
+              {
+                path: "/shop/pants",
+                label:"Pants",
+              },
+              {
+                path: "/shop/socks",
+                label:"Sockes",
+              }
+            ].map((item) => (
               <a
-                key={item}
+                key={item.path}
                 href="#"
                 className="text-gray-600 hover:text-black font-medium transition-colors relative group text-sm uppercase tracking-wide"
               >
-                {item}
+                {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
